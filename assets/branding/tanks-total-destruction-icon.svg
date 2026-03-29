@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Tanks Total Destruction Icon</title>
+  <desc id="desc">Military style crest with tank silhouette and TTD initials.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b2928"/>
+      <stop offset="100%" stop-color="#0d1415"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0d57b"/>
+      <stop offset="100%" stop-color="#b9862e"/>
+    </linearGradient>
+    <linearGradient id="ember" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff9251"/>
+      <stop offset="100%" stop-color="#cf4f2c"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="52" fill="url(#bg)"/>
+  <path d="M128 28 208 64v60c0 57-28 88-80 104C76 212 48 181 48 124V64l80-36Z" fill="none" stroke="url(#steel)" stroke-width="12"/>
+  <path d="M66 174c18-30 44-46 62-46 19 0 44 16 62 46" fill="none" stroke="url(#ember)" stroke-width="10" stroke-linecap="round"/>
+  <g transform="translate(128 120)">
+    <rect x="-52" y="-14" width="104" height="34" rx="10" fill="#6f7b67" stroke="#202922" stroke-width="4"/>
+    <rect x="-28" y="-30" width="56" height="30" rx="10" fill="#879178" stroke="#202922" stroke-width="4"/>
+    <rect x="-6" y="-58" width="12" height="34" rx="4" fill="#d7c08b"/>
+    <rect x="0" y="-86" width="64" height="10" rx="5" fill="#d7c08b"/>
+    <circle cx="-32" cy="18" r="8" fill="#202922"/>
+    <circle cx="-10" cy="18" r="8" fill="#202922"/>
+    <circle cx="10" cy="18" r="8" fill="#202922"/>
+    <circle cx="32" cy="18" r="8" fill="#202922"/>
+  </g>
+  <text x="128" y="210" text-anchor="middle" font-family="Russo One, Arial Black, sans-serif" font-size="40" fill="url(#steel)" letter-spacing="4">TTD</text>
+</svg>

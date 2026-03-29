@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanks Total Destruction</title>
+  <link rel="icon" type="image/svg+xml" href="assets/branding/tanks-total-destruction-icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="panel panel--active panel--menu" id="mode-panel">
+      <div class="panel__content">
+        <div class="brand-lockup">
+          <img class="brand-lockup__icon" src="assets/branding/tanks-total-destruction-icon.svg" alt="Tanks Total Destruction logo">
+          <div>
+            <p class="brand-lockup__eyebrow">Tanks Total Destruction</p>
+            <p class="brand-lockup__tag">Arcade Armor Clash</p>
+          </div>
+        </div>
+        <p class="eyebrow">Режим на игра</p>
+        <h1>Избери как ще играеш</h1>
+        <p class="panel__lead">Можеш да играеш сам, срещу приятел на същия компютър, или онлайн срещу друг човек чрез ръчно свързване.</p>
+        <div class="card-grid" id="mode-options"></div>
+        <p class="credit-tag">BY:SVETLY AND CODEX</p>
+      </div>
+    </section>
+
+    <section class="panel panel--menu" id="country-panel">
+      <div class="panel__content">
+        <button class="back-button" id="back-to-mode" type="button">Назад</button>
+        <p class="eyebrow">Танкова операция</p>
+        <h1 id="country-panel-title">Избери своята армия</h1>
+        <p class="panel__lead" id="country-panel-copy">Първо избираш нация, после модел танк, а след това влизаш в бойното поле.</p>
+        <div class="card-grid" id="country-options"></div>
+        <section class="sound-settings">
+          <p class="eyebrow">Звук</p>
+          <h3>Настройки на звука</h3>
+          <label class="sound-settings__row" for="master-volume">
+            <span>Общ звук</span>
+            <input id="master-volume" type="range" min="0" max="100" value="100">
+            <strong id="master-volume-value">100%</strong>
+          </label>
+          <label class="sound-settings__row" for="effects-volume">
+            <span>Ефекти</span>
+            <input id="effects-volume" type="range" min="0" max="100" value="100">
+            <strong id="effects-volume-value">100%</strong>
+          </label>
+          <label class="sound-settings__row" for="music-volume">
+            <span>Фон</span>
+            <input id="music-volume" type="range" min="0" max="100" value="100">
+            <strong id="music-volume-value">100%</strong>
+          </label>
+        </section>
+      </div>
+    </section>
+
+    <section class="panel panel--menu" id="tank-panel">
+      <div class="panel__content">
+        <button class="back-button" id="back-to-country" type="button">Назад</button>
+        <p class="eyebrow">Избор на техника</p>
+        <h2 id="tank-panel-title">Избери модел танк</h2>
+        <p class="panel__lead" id="tank-panel-copy"></p>
+        <div class="card-grid" id="tank-options"></div>
+      </div>
+    </section>
+
+    <section class="panel panel--menu" id="wave-panel">
+      <div class="panel__content">
+        <button class="back-button" id="back-to-tank" type="button">Назад</button>
+        <p class="eyebrow" id="setup-panel-eyebrow">Настройка на битката</p>
+        <h2 id="setup-panel-title">Избери колко танка да има във вълна</h2>
+        <p class="panel__lead" id="wave-panel-copy">Размерът на вълната определя колко врагове ще се появяват едновременно.</p>
+        <div class="card-grid" id="wave-options"></div>
+        <div id="ally-selection-block" hidden>
+          <p class="eyebrow">Съюзнически танк</p>
+          <p class="panel__lead" id="ally-panel-copy">Избери модел за съюзника от същата армия.</p>
+          <div class="card-grid" id="ally-options"></div>
+        </div>
+        <div class="prebattle-actions">
+          <button class="secondary-button" id="ally-toggle-button" type="button">Съюзник: Изключен</button>
+          <button class="secondary-button" id="start-battle-button" type="button">Старт</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel--menu" id="online-panel">
+      <div class="panel__content">
+        <button class="back-button" id="back-to-setup" type="button">Назад</button>
+        <p class="eyebrow">Онлайн Свързване</p>
+        <h2>Host или Join</h2>
+        <p class="panel__lead" id="online-panel-copy">Избери дали ще създадеш игра или ще се свържеш към приятел. Разменете кодовете помежду си.</p>
+        <label class="online-field online-field--compact" for="online-player-name">
+          <span>Потребителско име</span>
+          <input id="online-player-name" type="text" maxlength="18" placeholder="Например: Svetly">
+        </label>
+        <div class="prebattle-actions">
+          <button class="secondary-button" id="host-online-button" type="button">Създай игра</button>
+          <button class="secondary-button" id="join-online-button" type="button">Присъедини се</button>
+          <button class="secondary-button" id="start-online-match-button" type="button">Старт Online</button>
+        </div>
+        <div class="online-grid">
+          <label class="online-field">
+            <span>Моят код</span>
+            <textarea id="online-local-sdp" rows="8" readonly></textarea>
+          </label>
+          <label class="online-field">
+            <span>Код от приятел</span>
+            <textarea id="online-remote-sdp" rows="8"></textarea>
+          </label>
+        </div>
+        <div class="prebattle-actions">
+          <button class="secondary-button" id="apply-remote-sdp-button" type="button">Приложи кода</button>
+          <button class="secondary-button" id="copy-local-sdp-button" type="button">Копирай моя код</button>
+        </div>
+        <p class="panel__lead online-status" id="online-status">Няма активна връзка.</p>
+      </div>
+    </section>
+
+    <section class="panel" id="game-panel">
+      <div class="hud">
+        <div>
+          <p class="hud__label">Нация</p>
+          <p class="hud__value" id="hud-country">-</p>
+        </div>
+        <div>
+          <p class="hud__label">Танк</p>
+          <p class="hud__value" id="hud-tank">-</p>
+        </div>
+        <div>
+          <p class="hud__label">Живот</p>
+          <p class="hud__value" id="hud-health">100</p>
+        </div>
+        <div>
+          <p class="hud__label">Точки</p>
+          <p class="hud__value" id="hud-score">0</p>
+        </div>
+        <div>
+          <p class="hud__label">Щит / Ефекти</p>
+          <p class="hud__value" id="hud-shield">Няма</p>
+        </div>
+        <div>
+          <p class="hud__label">Мини</p>
+          <p class="hud__value" id="hud-mines">0</p>
+        </div>
+      </div>
+
+      <div class="game-layout">
+        <div class="battlefield-shell">
+          <canvas id="game-canvas" width="1600" height="900" aria-label="Игра с танкове"></canvas>
+          <div class="mobile-controls" aria-label="Мобилно управление">
+            <div class="mobile-controls__pad">
+              <button class="mobile-btn mobile-btn--up" data-control="up" type="button">▲</button>
+              <button class="mobile-btn mobile-btn--left" data-control="left" type="button">◀</button>
+              <button class="mobile-btn mobile-btn--right" data-control="right" type="button">▶</button>
+              <button class="mobile-btn mobile-btn--down" data-control="down" type="button">▼</button>
+            </div>
+            <div class="mobile-controls__actions">
+              <button class="mobile-btn mobile-btn--action" data-control="shoot" type="button">Огън</button>
+              <button class="mobile-btn mobile-btn--action" data-control="mine" type="button">Мина</button>
+            </div>
+          </div>
+        </div>
+        <aside class="game-info">
+          <h3>Управление</h3>
+          <p>`Стрелките` за движение</p>
+          <p>`Space` за стрелба</p>
+          <p>`E` за поставяне на мина</p>
+          <p>На телефон използвай бутоните под полето.</p>
+          <p>Използвай сградите като прикритие, но помни, че могат да бъдат разрушени.</p>
+          <button class="secondary-button" id="restart-button" type="button">Смени танка</button>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
